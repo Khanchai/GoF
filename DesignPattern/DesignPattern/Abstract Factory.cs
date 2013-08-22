@@ -2,13 +2,13 @@
 
 namespace DesignPattern
 {
-    internal abstract class AbstractFactory
+    abstract class AbstractFactory
     {
         public abstract AbstractProductA CreateProductA();
         public abstract AbstractProductB CreateProductB();
     }
 
-    internal class ConcreteFactory1 : AbstractFactory
+    class ConcreteFactory1 : AbstractFactory
     {
         public override AbstractProductA CreateProductA()
         {
@@ -21,11 +21,11 @@ namespace DesignPattern
         }
     }
 
-    internal abstract class AbstractProductA
+    abstract class AbstractProductA
     {
     }
 
-    internal abstract class AbstractProductB
+    abstract class AbstractProductB
     {
         public abstract void Interact(AbstractProductA a);
     }
@@ -46,7 +46,7 @@ namespace DesignPattern
     {
     }
 
-    internal class ProductB2 : AbstractProductB
+    class ProductB2 : AbstractProductB
     {
         public override void Interact(AbstractProductA a)
         {

@@ -120,10 +120,66 @@ namespace DesignPattern
 //            // Wait for user
 //            Console.ReadKey();
 
-            Facade facade = new Facade();
+//            Facade facade = new Facade();
+//
+//            facade.MethodA();
+//            facade.MethodB();
+//
+//            // Wait for user
+//            Console.ReadKey();
 
-            facade.MethodA();
-            facade.MethodB();
+//            Abstraction ab = new RefinedAbstraction();
+//
+//            // Set implementation and call
+//            ab.Implementor = new ConcreteImplementorA();
+//            ab.Operation();
+//
+//            // Change implemention and call
+//            ab.Implementor = new ConcreteImplementorB();
+//            ab.Operation();
+//
+//            // Wait for user
+//            Console.ReadKey();
+
+//            ConcreteComponent c = new ConcreteComponent();
+//            ConcreteDecoratorA d1 = new ConcreteDecoratorA();
+//            ConcreteDecoratorB d2 = new ConcreteDecoratorB();
+//
+//            // Link decorators
+//            d1.SetComponent(c);
+//            d2.SetComponent(d1);
+//
+//            d2.Operation();
+//
+//            // Wait for user
+//            Console.ReadKey();
+
+            // Setup Chain of Responsibility
+//            Handler h1 = new ConcreteHandler1();
+//            Handler h2 = new ConcreteHandler2();
+//            Handler h3 = new ConcreteHandler3();
+//            h1.SetSuccessor(h2);
+//            h2.SetSuccessor(h3);
+//
+//            // Generate and process request
+//            int[] requests = { 2, 5, 14, 22, 18, 3, 27, 20 };
+//
+//            foreach (int request in requests)
+//            {
+//                h1.HandleRequest(request);
+//            }
+//
+//            // Wait for user
+//            Console.ReadKey();
+
+            // Create receiver, command, and invoker
+            Receiver receiver = new Receiver();
+            Command command = new ConcreteCommand(receiver);
+            Invoker invoker = new Invoker();
+
+            // Set and execute command
+            invoker.SetCommand(command);
+            invoker.ExecuteCommand();
 
             // Wait for user
             Console.ReadKey();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DesignPattern
 {
-    internal abstract class Component
+    internal abstract partial class Component
     {
         protected string name;
 
