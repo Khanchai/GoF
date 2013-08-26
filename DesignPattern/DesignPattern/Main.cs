@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace DesignPattern
 {
@@ -173,13 +174,49 @@ namespace DesignPattern
 //            Console.ReadKey();
 
             // Create receiver, command, and invoker
-            Receiver receiver = new Receiver();
-            Command command = new ConcreteCommand(receiver);
-            Invoker invoker = new Invoker();
+//            Receiver receiver = new Receiver();
+//            Command command = new ConcreteCommand(receiver);
+//            Invoker invoker = new Invoker();
+//
+//            // Set and execute command
+//            invoker.SetCommand(command);
+//            invoker.ExecuteCommand();
+//
+//            // Wait for user
+//            Console.ReadKey();
 
-            // Set and execute command
-            invoker.SetCommand(command);
-            invoker.ExecuteCommand();
+//            ContextInterperter context = new ContextInterperter();
+//
+//            // Usually a tree
+//            ArrayList list = new ArrayList();
+//
+//            // Populate 'abstract syntax tree'
+//            list.Add(new TerminalExpression());
+//            list.Add(new NonterminalExpression());
+//            list.Add(new TerminalExpression());
+//            list.Add(new TerminalExpression());
+//
+//            // Interpret
+//            foreach (AbstractExpression exp in list)
+//            {
+//                exp.Interperter(context);
+//            }
+//
+//            // Wait for user
+//            Console.ReadKey();
+
+            // Setup structure
+            ObjectStructure o = new ObjectStructure();
+            o.Attach(new ConcreteElementA());
+            o.Attach(new ConcreteElementB());
+
+            // Create visitor objects
+            ConcreteVisitor1 v1 = new ConcreteVisitor1();
+            ConcreteVisitor2 v2 = new ConcreteVisitor2();
+
+            // Structure accepting visitors
+            o.Accept(v1);
+            o.Accept(v2);
 
             // Wait for user
             Console.ReadKey();
